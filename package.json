@@ -1,0 +1,55 @@
+{
+  "name": "github-gitflow-release",
+  "version": "1.0.0",
+  "description": "Enjoy GitHub and all its awesomeness without compromising on your GitFlow vision",
+  "main": "index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "test": "jest --config --passWithNoTests jestconfig.json",
+    "clean": "rimraf node_modules lib",
+    "prepare": "npm run build",
+    "build": "tsc",
+    "build:dry": "tsc --noEmit",
+    "lint": "eslint 'src/**/*.{js,ts,json}'",
+    "lint:fix": "npm run lint --fix",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ultm8soulja/github-gitflow-release.git"
+  },
+  "keywords": [
+    "github",
+    "gitflow",
+    "conventional commits"
+  ],
+  "author": "Colin Agbabiaka <coliny2k@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ultm8soulja/github-gitflow-release/issues"
+  },
+  "homepage": "https://github.com/ultm8soulja/github-gitflow-release#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@types/jest": "^25.1.2",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-json": "^2.0.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
+  }
+}
